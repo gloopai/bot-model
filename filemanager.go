@@ -16,3 +16,9 @@ type StorageClientOptions struct {
 	BucketName      string          `json:"bucketName"`
 	Host            string          `json:"host"`
 }
+
+/* 存储桶信息 */
+type StorageBucket struct {
+	Name   string `json:"name"`   // 存储桶名称
+	Region string `json:"region"` // 存储桶所在区域
+}
