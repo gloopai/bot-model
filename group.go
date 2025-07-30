@@ -72,7 +72,7 @@ type GroupSensitiveWordConfig struct {
 type GroupSensitiveWordRule struct {
 	Keyword      string                   `json:"keyword"`       // 敏感词
 	HandleAction GroupSensitiveWordAction `json:"handle_action"` // 处理方式
-	BanDuration  int                      `json:"ban_duration"`  // 封禁时长（秒），仅当处理方式为BanUser时有效
+	BanDuration  int                      `json:"ban_duration"`  // 封禁时长（分钟），仅当处理方式为BanUser时有效
 }
 
 // 敏感词处理方式
