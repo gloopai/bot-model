@@ -127,14 +127,15 @@ const (
 
 // 验证配置
 type GroupVerificationConfig struct {
-	WaitTimeSeconds       int                     // 等待认证时间（秒）
-	RejoinCooldownSeconds int                     // 重新进入时间（秒）
 	Method                GroupVerificationMethod // 验证方式
 	PromptMessage         string                  // 提示消息
+	WaitTimeSeconds       int                     // 等待认证时间（分钟）
+	RejoinCooldownSeconds int                     // 重新进入时间（分钟）
+	RestrictWhilePending  bool                    // 未验证时是否禁言（true=禁言，false=不禁言）
 }
 
 // FilterResult 统一检测结果
-type GroupFilterResult struct {
+type GroupRiskResult struct {
 	ShouldDelete  bool                    // 是否应删除消息
 	Reason        string                  // 检测结果原因说明
 	SensitiveHit  bool                    // 是否命中敏感词
