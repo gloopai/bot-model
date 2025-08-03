@@ -119,9 +119,9 @@ type ForwardMessageFilter struct {
 type GroupVerificationMethod int
 
 const (
-	GroupVerificationNone     GroupVerificationMethod = iota // 无需验证
-	GroupVerificationQuestion                                // 答题验证
-	GroupVerificationManual                                  // 管理员手动审核
+	GroupVerificationNone   GroupVerificationMethod = iota // 无需验证
+	SimpleVerification                                     // 简单验证
+	GroupVerificationManual                                // 管理员手动审核
 	// 可扩展更多方式
 )
 
