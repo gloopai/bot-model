@@ -12,6 +12,10 @@ type BotMeta struct {
 	Status  BotStatus // 状态
 }
 
+type BotMateReq struct {
+	Guid string `json:"guid"` // Bot 的唯一标识符
+}
+
 // BotStatus 表示 Bot 的状态
 type BotStatus string
 
