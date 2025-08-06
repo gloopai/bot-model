@@ -1,5 +1,9 @@
 package model
 
+import (
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+)
+
 type TelegramBot struct {
 	Guid                    string   `json:"guid" gorm:"primaryKey;not null"`
 	UserId                  int64    `json:"user_id" gorm:"not null"`
@@ -29,4 +33,17 @@ type TelegramBot struct {
 
 func (t *TelegramBot) TableName() string {
 	return "gloop_telegram_bot"
+}
+
+// BotMeta 用于存储 Bot 的元信息
+type BotAPIService struct {
+	Bot  *tgbotapi.BotAPI
+	Meta *BotMeta
+}
+
+// BotMetaReq 用于获取 Bot 元信息的请求
+type GroupMuteMemberReq struct {
+	BotGuid string
+	ChatID  int64
+	UserID  int64
 }
