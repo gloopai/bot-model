@@ -43,7 +43,15 @@ type BotAPIService struct {
 
 // BotMetaReq 用于获取 Bot 元信息的请求
 type GroupMuteMemberReq struct {
-	BotGuid string
-	ChatID  int64
-	UserID  int64
+	BotGuid  string // Bot 的 GUID
+	ChatID   int64  // 聊天 ID
+	UserID   int64  // 用户 ID
+	Duration int    // 静音时长（秒）
+}
+
+// GroupUnMuteMemberReq 用于取消静音群成员的请求
+type GroupUnMuteMemberReq struct {
+	BotGuid string // Bot 的 GUID
+	ChatID  int64  // 聊天 ID
+	UserID  int64  // 用户 ID
 }
